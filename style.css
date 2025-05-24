@@ -95,6 +95,7 @@ h1, h2, h3 {
   flex: 0 0 auto;
   /* Center text inside the card */
   text-align: center;
+  position: relative; /* Added for overlay positioning */
 }
 
 /* Optional: Make images inside cards fit nicely */
@@ -104,34 +105,52 @@ h1, h2, h3 {
   margin-top: 10px;
 }
 
-/* Hide the paragraph inside each card by default */
+/* Hide the paragraph inside each card by default and set up overlay styles */
 .card p {
-  display: none;
-  /* Center the text inside the paragraph */
-  text-align: center;
-  /* Limit the width to 800px and center horizontally */
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  /* Hide by default */
+  opacity: 0;
+  visibility: hidden;
+  /* Position the overlay absolutely inside the card */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Overlay background with more opacity and a darker blue for readability */
+  background: rgba(0, 51, 102, 0.96); /* darker blue with higher opacity */
+  color: white;
+  /* Center the text vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Rounded corners to match the card */
+  border-radius: 10px;
+  /* Smooth transition for the overlay */
+  transition: opacity 0.3s;
+  /* Add padding for better readability */
+  padding: 16px;
+  /* Make sure overlay is above other content */
+  z-index: 2;
+  /* Prevent text selection highlight from showing through */
+  pointer-events: none;
+  /* For accessibility, allow screen readers to read */
 }
 
-/* Show the paragraph when the card is hovered */
+/* Show the overlay when the card is hovered */
 .card:hover p {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
-/* Add a hover effect for the paragraph inside each card */
+/* Remove the old hover effect for .card p */
 .card p:hover {
-  /* Change background color on hover */
-  background-color: #e0f7fa;
-  /* Slightly enlarge the paragraph */
-  transform: scale(1.03);
-  /* Smooth transition for the effect */
-  transition: background-color 0.3s, transform 0.3s;
-  /* Add a little padding for better appearance */
-  padding: 6px;
-  /* Make corners a bit rounded */
-  border-radius: 6px;
+  /* No longer needed for overlay */
+  background-color: unset;
+  transform: unset;
+  transition: unset;
+  padding: unset;
+  border-radius: unset;
 }
 
 /* Responsive: Make h1 smaller on small screens */
