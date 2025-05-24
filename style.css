@@ -65,6 +65,8 @@ h1, h2, h3 {
   display: flex;
   /* Allow horizontal scrolling if there are more than 4 cards */
   overflow-x: auto;
+  /* Add scroll snap for horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap horizontally, required for beginners */
   /* Add some space between the cards */
   gap: 20px;
   /* Add padding so cards don't touch the edges */
@@ -99,6 +101,8 @@ h1, h2, h3 {
   text-align: left; /* Align card text to the left */
   position: relative; /* Needed for overlay positioning */
   overflow: hidden;   /* Ensures overlay stays inside card corners */
+  /* Snap each card to the start of the container */
+  scroll-snap-align: start; /* Snap each card to the start of the container */
 }
 
 /* Make images inside cards fit nicely */
