@@ -63,6 +63,11 @@ h1, h2, h3 {
   padding: 20px 0;
   /* Prevent cards from wrapping to the next line */
   flex-wrap: nowrap;
+  /* Limit the width so only 4 cards are visible at a time */
+  max-width: 1080px; /* 4 cards * 250px + 3 gaps * 20px = 1080px */
+  /* Center the cards container on the page */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Each card: set a fixed width so 4 fit on the screen */
