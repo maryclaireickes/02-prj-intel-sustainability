@@ -103,10 +103,12 @@ h1, h2, h3 {
 
 /* Make images inside cards fit nicely */
 .card img {
+  /* Set a fixed width and height for all images to keep them the same size */
   width: 100%;
+  height: 120px; /* You can adjust this value as needed */
+  object-fit: cover; /* Crop the image to fill the area without stretching */
   border-radius: 6px;
   margin-top: 10px;
-  /* Make sure the image is block-level for overlay alignment */
   display: block;
 }
 
@@ -192,5 +194,15 @@ h1, h2, h3 {
   .hero {
     /* Reduce padding in the hero section on small screens */
     padding: 20px 10px;
+  }
+  .card img {
+    /* Make the image fill the card width and height on small screens */
+    width: 100%;
+    height: 60vw; /* Make image height responsive to screen width */
+    max-height: 60vw; /* Optional: limit max height for very tall images */
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 10px;
+    display: block;
   }
 }
