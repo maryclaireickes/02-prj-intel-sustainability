@@ -1,1 +1,14 @@
+/* Import Intel One Mono font from GitHub */
+@font-face {
+  font-family: 'IntelOneMono';
+  src: url('https://github.com/intel/intel-one-mono/raw/main/fonts/otf/IntelOneMono-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Set the font for the whole page */
+body {
+  font-family: 'IntelOneMono', monospace;
+}
+
 /* Add your CSS here */
