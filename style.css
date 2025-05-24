@@ -1,22 +1,17 @@
-/* Import Intel One Mono font from GitHub */
-@font-face {
-  font-family: 'IntelOneMono';
-  src: url('https://github.com/intel/intel-one-mono/raw/main/fonts/otf/IntelOneMono-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
 
-/* Set the font for the whole page */
+/* Set Montserrat as the font for the whole page */
 body {
-  font-family: 'IntelOneMono', monospace;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 /* Add your CSS here */
 
 /* Hero section with a blue gradient background */
 .hero {
-  /* Simple blue gradient background using Pantone 285 C (#0072CE) */
-  background: linear-gradient(to right, #0072ce, #0072ce);
+  /* Blue gradient: dark blue on the left, Pantone 285 C (#0072CE) on the right */
+  background: linear-gradient(to right, #003366, #0072ce);
   /* Add some space inside the hero section */
   padding: 40px 20px;
   /* Center all text and images */
@@ -37,10 +32,21 @@ body {
 .hero h1 {
   color: white;
   margin-bottom: 10px;
+  /* Use the modern tech font for the main heading */
+  font-family: 'Montserrat', monospace;
 }
 
 /* Make the subheading text white and easy to read */
 .hero p {
   color: #e0f7fa;
   font-size: 1.1em;
+  /* Center the subheading and limit its width to about 50% */
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Use Montserrat font for all headers for a modern look */
+h1, h2, h3 {
+  font-family: 'Montserrat', 'IntelOneMono', monospace;
 }
