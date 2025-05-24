@@ -84,7 +84,7 @@ h1, h2, h3 {
   min-width: 250px;
   max-width: 250px;
   /* Add a background color for visibility */
-  background: #f5faff;
+  background: #ebeced;
   /* Add rounded corners */
   border-radius: 10px;
   /* Add a little shadow for depth */
@@ -94,8 +94,10 @@ h1, h2, h3 {
   /* Make sure cards don't shrink too small */
   flex: 0 0 auto;
   /* Center text inside the card */
-  text-align: center;
+  text-align: left; /* Align card text to the left */
   position: relative; /* Added for overlay positioning */
+  overflow: hidden;   /* Ensure overlay stays inside card corners */
+  height: 100%;       /* Ensure card has a set height for overlay */
 }
 
 /* Make the card image container relative for overlay positioning */
@@ -117,12 +119,12 @@ h1, h2, h3 {
   /* Hide by default */
   opacity: 0;
   visibility: hidden;
-  /* Position absolutely over the image */
+  /* Position absolutely over the entire card */
   position: absolute;
-  top: 10px; /* match image's margin-top */
+  top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% - 10px); /* cover image area */
+  height: 100%; /* Overlay matches the card's height */
   /* Overlay background for readability */
   background: rgba(0, 51, 102, 0.96);
   color: white;
@@ -130,9 +132,10 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: 10px;
+  box-sizing: border-box;
   transition: opacity 0.3s;
-  padding: 16px;
+  padding: 15px;
   z-index: 2;
   pointer-events: none;
 }
@@ -144,23 +147,32 @@ h1, h2, h3 {
   pointer-events: auto;
 }
 
+/* Make h2 in cards bold and blue */
+.card h2 {
+  color: #003366; /* Same as background */
+  font-weight: bold; /* Make text bold */
+}
+
 /* Responsive: Make h1 smaller on small screens */
 @media (max-width: 600px) {
   .hero h1 {
     /* Set font size to 22px for small screens */
     font-size: 22px;
   }
-  .hero p 
-  {font-size: 14px; 
+  .hero p {
+    font-size: 14px;
   }
   .cards-container {
-    /* Allow only 2 cards to be visible on small screens */
-    max-width: 540px; /* 2 cards * 250px + 1 gap * 20px = 540px */
+    /* Stack cards vertically on small screens */
+    flex-direction: column;
+    max-width: 100%;
+    gap: 20px;
+    align-items: center; /* Center cards horizontally */
   }
   .card {
-    /* Set card width to fit 2 cards on small screens */
-    min-width: 240px;
-    max-width: 240px;
+    /* Make cards take full width on small screens */
+    min-width: 90%;
+    max-width: 90%;
   }
   .hero img {
     /* Make the Intel logo smaller on small screens */
