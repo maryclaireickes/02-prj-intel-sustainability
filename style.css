@@ -83,6 +83,8 @@ h1, h2, h3 {
   /* Set the width so 4 cards fit side by side on most screens */
   min-width: 250px;
   max-width: 250px;
+  width: 250px;      /* Set a fixed width for the card */
+  height: 350px;     /* Set a fixed height for the card */
   /* Add a background color for visibility */
   background: #ebeced;
   /* Add rounded corners */
@@ -95,9 +97,9 @@ h1, h2, h3 {
   flex: 0 0 auto;
   /* Center text inside the card */
   text-align: left; /* Align card text to the left */
-  position: relative; /* Added for overlay positioning */
-  overflow: hidden;   /* Ensure overlay stays inside card corners */
-  height: 100%;       /* Ensure card has a set height for overlay */
+  position: relative; /* Needed for overlay positioning */
+  overflow: hidden;   /* Ensures overlay stays inside card corners */
+  height: auto;       /* Let the card height fit its content */
 }
 
 /* Make the card image container relative for overlay positioning */
@@ -132,7 +134,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 10px; /* Match card's border radius */
   box-sizing: border-box;
   transition: opacity 0.3s;
   padding: 15px;
@@ -158,9 +160,19 @@ h1, h2, h3 {
   .hero h1 {
     /* Set font size to 22px for small screens */
     font-size: 22px;
+    /* Make the heading take up 50% of the width */
+    width: 50%;
+    /* Center the heading horizontally */
+    margin-left: auto;
+    margin-right: auto;
+    /* Keep text centered */
+    text-align: center;
+    /* Optional: prevent the heading from being too small */
+    min-width: 180px;
   }
   .hero p {
     font-size: 14px;
+    max-width: 50%;
   }
   .cards-container {
     /* Stack cards vertically on small screens */
@@ -173,6 +185,8 @@ h1, h2, h3 {
     /* Make cards take full width on small screens */
     min-width: 90%;
     max-width: 90%;
+    width: 90%;      /* Make card width responsive */
+    height: 350px;   /* Keep overlay and card the same height */
   }
   .hero img {
     /* Make the Intel logo smaller on small screens */
