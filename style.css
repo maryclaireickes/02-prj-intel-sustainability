@@ -50,3 +50,43 @@ body {
 h1, h2, h3 {
   font-family: 'Montserrat', 'IntelOneMono', monospace;
 }
+
+/* Cards container: show 4 cards at a time and scroll horizontally */
+.cards-container {
+  /* Use flexbox to arrange cards in a row */
+  display: flex;
+  /* Allow horizontal scrolling if there are more than 4 cards */
+  overflow-x: auto;
+  /* Add some space between the cards */
+  gap: 20px;
+  /* Add padding so cards don't touch the edges */
+  padding: 20px 0;
+  /* Prevent cards from wrapping to the next line */
+  flex-wrap: nowrap;
+}
+
+/* Each card: set a fixed width so 4 fit on the screen */
+.card {
+  /* Set the width so 4 cards fit side by side on most screens */
+  min-width: 250px;
+  max-width: 250px;
+  /* Add a background color for visibility */
+  background: #f5faff;
+  /* Add rounded corners */
+  border-radius: 10px;
+  /* Add a little shadow for depth */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  /* Add some space inside each card */
+  padding: 16px;
+  /* Make sure cards don't shrink too small */
+  flex: 0 0 auto;
+  /* Center text inside the card */
+  text-align: center;
+}
+
+/* Optional: Make images inside cards fit nicely */
+.card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
+}
