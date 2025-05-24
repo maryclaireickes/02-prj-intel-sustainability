@@ -12,3 +12,35 @@ body {
 }
 
 /* Add your CSS here */
+
+/* Hero section with a blue gradient background */
+.hero {
+  /* Simple blue gradient background using Pantone 285 C (#0072CE) */
+  background: linear-gradient(to right, #0072ce, #0072ce);
+  /* Add some space inside the hero section */
+  padding: 40px 20px;
+  /* Center all text and images */
+  text-align: center;
+  /* Make the corners a little rounded */
+  border-radius: 10px;
+  /* Add space below the hero section */
+  margin-bottom: 30px;
+}
+
+/* Make the Intel logo a bit smaller and add space below */
+.hero img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* Make the main heading white for contrast */
+.hero h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Make the subheading text white and easy to read */
+.hero p {
+  color: #e0f7fa;
+  font-size: 1.1em;
+}
