@@ -95,3 +95,27 @@ h1, h2, h3 {
   border-radius: 6px;
   margin-top: 10px;
 }
+
+/* Hide the paragraph inside each card by default */
+.card p {
+  display: none;
+}
+
+/* Show the paragraph when the card is hovered */
+.card:hover p {
+  display: block;
+}
+
+/* Add a hover effect for the paragraph inside each card */
+.card p:hover {
+  /* Change background color on hover */
+  background-color: #e0f7fa;
+  /* Slightly enlarge the paragraph */
+  transform: scale(1.03);
+  /* Smooth transition for the effect */
+  transition: background-color 0.3s, transform 0.3s;
+  /* Add a little padding for better appearance */
+  padding: 6px;
+  /* Make corners a bit rounded */
+  border-radius: 6px;
+}
