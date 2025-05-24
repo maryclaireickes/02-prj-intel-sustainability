@@ -17,14 +17,17 @@ body {
   /* Center all text and images */
   text-align: center;
   /* Make the corners a little rounded */
-  border-radius: 10px;
+  border-radius: 0px;
   /* Add space below the hero section */
   margin-bottom: 30px;
+  /* Make the hero section extend to the full width of the page */
+  width: 100%;
 }
 
 /* Make the Intel logo a bit smaller and add space below */
 .hero img {
-  width: 120px;
+  width: 15%;
+  align: center;
   margin-bottom: 20px;
 }
 
@@ -34,6 +37,11 @@ body {
   margin-bottom: 10px;
   /* Use the modern tech font for the main heading */
   font-family: 'Montserrat', monospace;
+  max-width: 50%;
+  text-align: center;
+  /* Center the h1 horizontally */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Make the subheading text white and easy to read */
@@ -99,6 +107,12 @@ h1, h2, h3 {
 /* Hide the paragraph inside each card by default */
 .card p {
   display: none;
+  /* Center the text inside the paragraph */
+  text-align: center;
+  /* Limit the width to 800px and center horizontally */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Show the paragraph when the card is hovered */
