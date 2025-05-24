@@ -80,11 +80,11 @@ h1, h2, h3 {
 
 /* Each card: set a fixed width so 4 fit on the screen */
 .card {
-  /* Set the width so 4 cards fit side by side on most screens */
+  /* Set the width and height so all cards and overlays are the same size */
   min-width: 250px;
   max-width: 250px;
-  width: 250px;      /* Set a fixed width for the card */
-  height: 350px;     /* Set a fixed height for the card */
+  width: 250px;
+  height: 250px;     /* Make the card height equal to its width for a square shape */
   /* Add a background color for visibility */
   background: #ebeced;
   /* Add rounded corners */
@@ -99,12 +99,6 @@ h1, h2, h3 {
   text-align: left; /* Align card text to the left */
   position: relative; /* Needed for overlay positioning */
   overflow: hidden;   /* Ensures overlay stays inside card corners */
-  height: auto;       /* Let the card height fit its content */
-}
-
-/* Make the card image container relative for overlay positioning */
-.card {
-  position: relative;
 }
 
 /* Make images inside cards fit nicely */
@@ -116,7 +110,7 @@ h1, h2, h3 {
   display: block;
 }
 
-/* Overlay: position the description only over the image */
+/* Overlay: position the description over the entire card */
 .card p {
   /* Hide by default */
   opacity: 0;
@@ -145,6 +139,7 @@ h1, h2, h3 {
 /* Show the overlay when the card is hovered */
 .card:hover p {
   opacity: 1;
+  scale: 1;
   visibility: visible;
   pointer-events: auto;
 }
@@ -186,7 +181,9 @@ h1, h2, h3 {
     min-width: 90%;
     max-width: 90%;
     width: 90%;      /* Make card width responsive */
-    height: 350px;   /* Keep overlay and card the same height */
+    height: 90vw;    /* Make card height equal to its width for a square shape */
+    max-height: 90vw;
+    min-height: 200px; /* Optional: set a minimum height for very small screens */
   }
   .hero img {
     /* Make the Intel logo smaller on small screens */
