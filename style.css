@@ -152,6 +152,12 @@ h1, h2, h3 {
   font-weight: bold; /* Make text bold */
 }
 
+/* Make the card slightly bigger and add a shadow when hovered */
+.card:hover {
+  transform: scale(1.05); /* Grows the card by 5% */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15); /* Adds a bigger shadow */
+}
+
 /* Responsive: Make h1 smaller on small screens */
 @media (max-width: 600px) {
   .hero h1 {
