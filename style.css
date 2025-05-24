@@ -133,3 +133,31 @@ h1, h2, h3 {
   /* Make corners a bit rounded */
   border-radius: 6px;
 }
+
+/* Responsive: Make h1 smaller on small screens */
+@media (max-width: 600px) {
+  .hero h1 {
+    /* Set font size to 22px for small screens */
+    font-size: 22px;
+  }
+  .hero p 
+  {font-size: 14px; 
+  }
+  .cards-container {
+    /* Allow only 2 cards to be visible on small screens */
+    max-width: 540px; /* 2 cards * 250px + 1 gap * 20px = 540px */
+  }
+  .card {
+    /* Set card width to fit 2 cards on small screens */
+    min-width: 240px;
+    max-width: 240px;
+  }
+  .hero img {
+    /* Make the Intel logo smaller on small screens */
+    width: 30%;
+  }
+  .hero {
+    /* Reduce padding in the hero section on small screens */
+    padding: 20px 10px;
+  }
+}
